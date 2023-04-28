@@ -101,7 +101,7 @@ int main()
 
 
 		// Handle ball hitting the bottom 
-		if (ball.getPosition().top > window.getSize().y)
+		if (ball.getPosition().top > window.getSize().y- 5)
 		{
 			// reverse the ball direction
 			ball.reboundBottom();
