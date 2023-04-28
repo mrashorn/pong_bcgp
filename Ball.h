@@ -29,4 +29,8 @@ class Ball
 		void reboundBottom();
 
 		void update(Time dt);
+
+		void level_up();
+
+		void reset_speed();
 };

@@ -6,20 +6,22 @@
 
 int main()
 {
+	int window_width = 800;
+	int window_height = 400;
 	// Create a video mode object
-	VideoMode vm(1920, 1080);
+	VideoMode vm(window_width, window_height);
 
 	// Create and open a window for the game
-	RenderWindow window(vm, "Pong", Style::Fullscreen);
+	RenderWindow window(vm, "Pong", Style::Default);
 
 	int score = 0;
 	int lives = 3;
 
 	// Create a bat at the bottom of the screen
-	Bat bat(1920/2, 1080 - 20);
+	Bat bat(window_width/2, window_height - 20);
 
 	// Create a ball
-	Ball ball(1920/2, 0);
+	Ball ball(window_width/2, 0);
 
 	// We will add the ball in the next chapter
 	
@@ -32,7 +34,7 @@ int main()
 	
 	// set the hud font 
 	hud.setFont(font);
-	hud.setCharacterSize(75);
+	hud.setCharacterSize(45);
 	hud.setFillColor(Color::White);
 	hud.setPosition(20, 20);
 
@@ -116,6 +118,8 @@ int main()
 				score = 0;
 				// reset the lives
 				lives = 3;
+				// reset the ball speed
+				ball.reset_speed();
 			}
 		}
 
@@ -126,6 +130,7 @@ int main()
 
 			// Add a point to the players score
 			score++;
+			ball.level_up(); // make the ball speed up
 		}
 
 		// Handle the ball hitting sides

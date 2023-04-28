@@ -40,7 +40,7 @@ void Ball::reboundBatOrTop()
 void Ball::reboundBottom()
 {
 	m_Position.y = 100;
-	m_Position.x = 500;
+	m_Position.x = 400;
 }
 
 void Ball::update(Time dt)
@@ -51,5 +51,15 @@ void Ball::update(Time dt)
 
 	// Move the ball
 	m_Shape.setPosition(m_Position);
+}
+
+void Ball::level_up()
+{
+	m_Speed *= 1.1;
+}
+
+void Ball::reset_speed()
+{
+	m_Speed = 400.0f;
 }
 

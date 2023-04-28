@@ -11,7 +11,7 @@ class Bat
 		// A rectangle shape object
 		RectangleShape m_Shape;
 
-		float m_Speed = 1000.0f;
+		float m_Speed = 750.0f;
 		
 		bool m_MovingRight = false;
 		bool m_MovingLeft = false;
@@ -32,5 +32,7 @@ class Bat
 		void stopRight();
 
 		void update(Time dt);
+
+		void reset_speed();
 
 };
